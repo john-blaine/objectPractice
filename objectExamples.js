@@ -29,3 +29,7 @@ class Pet {
   }
 }
 
+const onyx = new Pet('dog', 9, 'pug', 'bark bark');
+const jasper = new Pet('dog', 4, 'pug', 'yip yip');
+
+console.log(onyx.activity);
