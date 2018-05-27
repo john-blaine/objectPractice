@@ -29,12 +29,28 @@ class Pet {
 
   set owner(owner) {
     this._owner = owner;
-    console.log(`setter called: ${owner}`);
+    console.log(`setter called: ${owner.name}`);
   }
 
   speak() {
     console.log(this.sound);
   }
+}
+
+class Owner {
+  constructor(name, address) {
+    this.name = name;
+    this.address = address;
+  }
+
+  get phone() {
+    return this._phone;
+  }
+
+  set phone(phone) {
+    this._phone = phone.replace(/[^0-9]/g, '');
+  }
+
 }
 
 const onyx = new Pet('dog', 9, 'pug', 'bark bark');
@@ -46,10 +62,11 @@ console.log(onyx.activity);
 //But the instance of the class will not have the getter method as a property
 console.log(onyx);
 
-//Set and get owner
-onyx.owner = 'John';
+//Set owner and owner's phone number
+onyx.owner = new Owner('John', '1201 Davidson Drive');
+onyx.owner.phone = '(970) 646-3137';
 
-console.log(onyx.owner);
+console.log(onyx.owner.phone);
 
 
 
