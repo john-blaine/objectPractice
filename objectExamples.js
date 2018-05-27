@@ -23,6 +23,15 @@ class Pet {
 
   }
 
+  get owner() {
+    return this._owner;
+  }
+
+  set owner(owner) {
+    this._owner = owner;
+    console.log(`setter called: ${owner}`);
+  }
+
   speak() {
     console.log(this.sound);
   }
@@ -36,6 +45,11 @@ console.log(onyx.activity);
 
 //But the instance of the class will not have the getter method as a property
 console.log(onyx);
+
+//Set and get owner
+onyx.owner = 'John';
+
+console.log(onyx.owner);
 
 
 
